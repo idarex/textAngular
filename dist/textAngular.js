@@ -2,7 +2,7 @@
 @license textAngular
 Author : Austin Anderson
 License : 2013 MIT
-Version 1.5.0
+Version 1.5.1
 
 See README.md or https://github.com/fraywing/textAngular/wiki for requirements and use.
 */
@@ -1008,6 +1008,7 @@ angular.module('textAngular.taBind', ['textAngular.factories', 'textAngular.DOM'
 				/* istanbul ignore else: this is for catching the jqLite testing*/
 				if(eventData) angular.extend(e, eventData);
 				// this prevents focusout from firing on the editor when clicking toolbar buttons
+        e.stopPropagation();
 				e.preventDefault();
 				return false;
 			});
